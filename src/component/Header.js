@@ -7,25 +7,21 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import DialpadOutlinedIcon from '@material-ui/icons/DialpadOutlined';
 import { Avatar } from '@material-ui/core';
 import './css/Header.css'
-import { useSelector } from 'react-redux';
-import { selectUser } from '../features/userSlice';
-import { auth } from '../firebase'
 
-function Header() {
-    const user = useSelector(selectUser)
+ function Header() {
 
-    return (
-        <div className = "header">
-            <div className = "headerLeft">
-            <MenuIcon /> 
-                <img src = "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png" 
-                alt = "logo"
-                />
-            </div>
-            <div className = "headerMiddle">
-                <div className = "header__SearchContainer">
-                    <SearchIcon />
-                    <input 
+     return (
+         <div className = "header">
+             <div className = "headerLeft">
+             <MenuIcon /> 
+                 <img src = "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png" 
+                 alt = "logo"
+                 />
+             </div>
+             <div className = "headerMiddle">
+                 <div className = "header__SearchContainer">
+                     <SearchIcon />
+                     <input 
                         type = "text"
                         placeholder = "Search mail"
                     />
@@ -41,13 +37,11 @@ function Header() {
                     <div className = "headerAvatar" style = {{
                         cursor: "pointer",
                     }}>  
-                    <Avatar
-                    onClick={() => auth.signOut()}
-                    src = {user.photo} />
-                    </div>
-            </div>
-        </div>
-    );
-}
+                    <Avatar />
+                     </div>
+           </div>
+         </div>
+     );
+ }
 
-export default Header
+ export default Header

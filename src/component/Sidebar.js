@@ -21,8 +21,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../features/userSlice';
 
 function Sidebar() {
 
@@ -31,8 +29,6 @@ function Sidebar() {
     const [subject, setSubject] = useState("")
     const [content, setContent] = useState("")
     const [recipient, setRecipient] = useState("")
-
-    const user = useSelector(selectUser)
 
 
     return (
@@ -164,8 +160,7 @@ function Sidebar() {
                         />
                     </div>
                     <div className = "sidebarOption">
-                        <Avatar
-                        src = {user.photo} />
+                        <Avatar />
                      </div>   
                     </div>
                     </div>
